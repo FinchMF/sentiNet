@@ -1,0 +1,2 @@
+# sentiNet
+binary sentiment classification 
