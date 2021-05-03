@@ -95,7 +95,7 @@ def build_vocab_indicies(vocab: List[str]) -> Dict[str, int]:
 
 class Data:
 
-    def __init__(text: List[str], labels: List[str], 
+    def __init__(self, text: List[str], labels: List[str], 
                  polarity_cutoff: float, 
                  min_count: int, reduce_noise: bool = True):
 

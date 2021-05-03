@@ -21,7 +21,7 @@ def print_metrics(text: List[str], correct: int, start: float, i: int):
 
 class sentiNet:
 
-    def __init__(text: List[str], labels: List[str], reduce_noise: bool, hidden_nodes: int, 
+    def __init__(self, text: List[str], labels: List[str], reduce_noise: bool, hidden_nodes: int, 
                  min_count: int = 10, polarity_cutoff: float = 0.1, learning_rate: float = 0.1):
 
         self.DATA = Data(text=text, labels=labels, 
