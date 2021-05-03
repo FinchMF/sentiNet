@@ -24,13 +24,19 @@ class sentiNet:
     def __init__(self, text: List[str], labels: List[str], reduce_noise: bool, hidden_nodes: int, 
                  min_count: int = 10, polarity_cutoff: float = 0.1, learning_rate: float = 0.1):
 
+        np.random.seed(1)
+
         self.DATA = Data(text=text, labels=labels, 
                          polarity_cutoff=polarity_cutoff,
                          min_count=min_count, reduce_noise=reduce_noise)
 
+        self.init_network(input_nodes=self.DATA.text_vocab_size, 
+                          hidden_nodes=self.hidden_nodes, 
+                          output_nodes=self.output_nodes,
+                          learning_rate=learning_rate)
 
     def init_network(self, input_nodes: int, hidden_nodes: int, 
-                           output_nodes: int, learning_rate: float = 1.0):
+                           output_nodes: int, learning_rate: float = 0.1):
 
         self.input_nodes = input_nodes
         self.hidden_nodes = hidden_nodes
